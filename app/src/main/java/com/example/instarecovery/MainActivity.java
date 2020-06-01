@@ -26,6 +26,7 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     TextView textView;
+    public static String username;
     public static String messagedata;
     private static final int PERMISSION_REQUEST_CODE = 100;
     private static final int PICK_PDF_FILE = 2;
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         intent.setType("application/json");
         startActivityForResult(intent, PICK_PDF_FILE);
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,8 +60,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openFile();
-                Intent intent=new Intent(MainActivity.this, chats.class );
-                startActivity(intent);
+
             }
         });
 
@@ -76,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("logcat",uri.getPath());
                 try {
                     messagedata=readTextFromUri(uri);
+
+                    Intent intent=new Intent(MainActivity.this, chats.class );
+                    startActivity(intent);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

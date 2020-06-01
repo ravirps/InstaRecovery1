@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
         android:text="ye sender ka message hai"
-        android:id="@+id/sendrtext"
+        android:id="@+id/urtext"
         android:padding="10dp"
         android:textColor="@color/black"
         android:textSize="16sp"
