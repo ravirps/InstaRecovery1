@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.instarecovery.messages.chats;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -56,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openFile();
-                textView.setText(messagedata);
+                Intent intent=new Intent(MainActivity.this, chats.class );
+                startActivity(intent);
             }
         });
 
