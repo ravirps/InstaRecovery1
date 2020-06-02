@@ -20,21 +20,15 @@ public class chats extends AppCompatActivity {
     public static List<messages> messagesList;
     private ListView listView;
     private MessageAdapter messageAdapter;
-    public void setUsername(){
-        if(messagesList.size()<2)
-        {
-            MainActivity.username=messagesList.get(0).getParticipants().get(0);
-        }
-        else
-        {
-            if(messagesList.get(0).getParticipants().get(0)==messagesList.get(1).getParticipants().get(0)||
-                    messagesList.get(0).getParticipants().get(0)==messagesList.get(1).getParticipants().get(1))
-            {
-                MainActivity.username=messagesList.get(0).getParticipants().get(0);
-            }
-            else
-            {
-                MainActivity.username=messagesList.get(0).getParticipants().get(1);
+    public void setUsername() {
+        if (messagesList.size() < 2) {
+            MainActivity.username = messagesList.get(0).getParticipants().get(0);
+        } else {
+            if (messagesList.get(0).getParticipants().get(0) == messagesList.get(1).getParticipants().get(0) ||
+                    messagesList.get(0).getParticipants().get(0) == messagesList.get(1).getParticipants().get(1)) {
+                MainActivity.username = messagesList.get(0).getParticipants().get(0);
+            } else {
+                MainActivity.username = messagesList.get(0).getParticipants().get(1);
             }
         }
     }
@@ -46,7 +40,7 @@ public class chats extends AppCompatActivity {
         Gson gson=new Gson();
         Type listType = new TypeToken<List<messages>>(){}.getType();
         messagesList = gson.fromJson(MainActivity.messagedata, listType);
-        setUsername();
+        if(messagesList!=null)setUsername();
         messageAdapter=new MessageAdapter(this,messagesList);
         listView.setAdapter(messageAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:gravity="left"
     android:layout_height="wrap_content">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="60dp"
-        android:text="ye sender ka message hai"
-        android:id="@+id/sendrtext"
-        android:padding="10dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:background="@drawable/sendermessage"/>
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:gravity="left"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="60dp"
+            android:text="ye sender ka message hai"
+            android:id="@+id/sendrtext"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:background="@drawable/sendermessage"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:gravity="right"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="ye sender ka message hai"
+            android:id="@+id/urtext"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:background="@drawable/urmessage"/>
+
+    </LinearLayout>
 
 </LinearLayout>
